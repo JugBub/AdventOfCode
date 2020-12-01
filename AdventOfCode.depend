@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1606820235 source:c:\users\sebastian\documents\c++\adventofcode\day_1.cpp
+	<iostream>
+
+1606849893 source:c:\users\sebastian\documents\c++\adventofcode\main.cpp
+	<iostream>
+	<fstream>
+
