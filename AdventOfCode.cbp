@@ -5,7 +5,7 @@
 		<Option title="AdventOfCode" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="DAY_1/" />
+		<Option virtualFolders="DAY_2/;DAY_1/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/AdventOfCode" prefix_auto="1" extension_auto="1" />
@@ -32,6 +32,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Expense_Report.txt">
+			<Option virtualFolder="DAY_1/" />
+		</Unit>
+		<Unit filename="Passwords.txt">
+			<Option virtualFolder="DAY_2/" />
+		</Unit>
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
