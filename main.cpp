@@ -8,9 +8,8 @@ int day_1_1(){
     int allNumbers [200];
     ifstream myfile ("Expense_Report.txt");
 
-    int i=0;
-
     if(myfile.is_open()){
+        int i=0;
         while(getline(myfile, line)){
             allNumbers[i] = stoi (line,nullptr);
             i++;
@@ -36,9 +35,8 @@ int day_1_2(){
     int allNumbers [200];
     ifstream myfile ("Expense_Report.txt");
 
-    int i=0;
-
     if(myfile.is_open()){
+        int i=0;
         while(getline(myfile, line)){
             allNumbers[i] = stoi (line,nullptr);
             i++;
@@ -62,10 +60,80 @@ int day_1_2(){
 
 }
 
+int day_2_1(){
+    string passwords [1000];
+    string line;
+    ifstream myfile ("Passwords.txt");
+
+    if(myfile.is_open()){
+        int i=0;
+        while(getline(myfile, line)){
+            passwords[i] = line;     //stoi (line,nullptr);
+            i++;
+        }
+    }
+    int amount = 0;
+    for(int i=0;i<1000;i++){
+        string password = passwords[i];
+        int low = stoi(password.substr(0,password.find("-")), nullptr);
+        int high= stoi(password.substr(password.find("-")+1,password.find(" ")-password.find("-")-1), nullptr);
+        char target = password[password.find(" ")+1];
+        int _count = 0;
+        for(int j=password.find(target)+1;j<password.size();j++){
+            if(password[j] == target){
+                _count++;
+            }
+        }
+        if(low <= _count && _count <= high){
+            amount++;
+        }
+    }
+
+    return amount;
+}
+
+int day_2_2(){
+    string passwords [1000];
+    string line;
+    ifstream myfile ("Passwords.txt");
+
+    if(myfile.is_open()){
+        int i=0;
+        while(getline(myfile, line)){
+            passwords[i] = line;     //stoi (line,nullptr);
+            i++;
+        }
+    }
+    int amount = 0;
+    for(int i=0;i<1000;i++){
+        string password = passwords[i];
+        int low = stoi(password.substr(0,password.find("-")), nullptr)-1;
+        int high= stoi(password.substr(password.find("-")+1,password.find(" ")-password.find("-")-1), nullptr)-1;
+        char target = password[password.find(" ")+1];
+        int _count = 0;
+        int k = 0;
+        for(int j=password.find(target)+3;j<password.size();j++){
+            if(password[j] == target){
+                if(low == k | high == k){
+                    _count++;
+                }
+            }
+            k++;
+        }
+        if(_count == 1){
+            amount++;
+        }
+    }
+
+    return amount;
+}
+
 int main(){
 
 cout << "Day 1 question 1 = " << day_1_1() << endl;
 cout << "Day 1 question 2 = " << day_1_2() << endl;
+cout << "Day 2 question 1 = " << day_2_1() << endl;
+cout << "Day 2 question 2 = " << day_2_2() << endl;
 
 return 0;
 }
