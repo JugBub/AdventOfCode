@@ -5,7 +5,7 @@
 		<Option title="AdventOfCode" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="DAY_2/;DAY_1/" />
+		<Option virtualFolders="DAY_2/;DAY_1/;DAY_3/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/AdventOfCode" prefix_auto="1" extension_auto="1" />
@@ -37,6 +37,9 @@
 		</Unit>
 		<Unit filename="Passwords.txt">
 			<Option virtualFolder="DAY_2/" />
+		</Unit>
+		<Unit filename="Slope.txt">
+			<Option virtualFolder="DAY_3/" />
 		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>

@@ -128,12 +128,56 @@ int day_2_2(){
     return amount;
 }
 
+int day_3_1(){
+    string line;
+    ifstream myfile ("Slope.txt");
+    int x = 0;
+    int _count = 0;
+
+    if(myfile.is_open()){
+        while(getline(myfile, line)){
+            if(line[x] == '#'){
+                _count++;
+            }
+            x = (x+3) % line.size();
+        }
+    }
+
+    return _count;
+}
+
+int theFunctionFor3_2(int iX, int iY){
+    string line;
+    ifstream myfile ("Slope.txt");
+    int x = 0;
+    int y = 0;
+    int _count = 0;
+    if(myfile.is_open()){
+        while(getline(myfile, line)){
+            if(y % iY == 0){
+                if(line[x] == '#'){
+                    _count++;
+                }
+                x = (x+iX) % line.size();
+            }
+            y++;
+        }
+    }
+    return _count;
+}
+
+int day_3_2(){
+    return theFunctionFor3_2(1,1)*theFunctionFor3_2(3,1)*theFunctionFor3_2(5,1)*theFunctionFor3_2(7,1)*theFunctionFor3_2(1,2);
+}
+
 int main(){
 
 cout << "Day 1 question 1 = " << day_1_1() << endl;
 cout << "Day 1 question 2 = " << day_1_2() << endl;
 cout << "Day 2 question 1 = " << day_2_1() << endl;
 cout << "Day 2 question 2 = " << day_2_2() << endl;
+cout << "Day 3 question 1 = " << day_3_1() << endl;
+cout << "Day 3 question 2 = " << day_3_2() << endl;
 
 return 0;
 }
